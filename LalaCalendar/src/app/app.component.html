@@ -1,0 +1,121 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous"
+/>
+
+
+
+<body>
+  
+  <header>
+    <h1>Calendario Lala</h1>
+  </header>
+  
+
+  <div class="container-fluid">
+
+    <div class="row" id="schedulerVis">
+      <div class="col-6">
+        <button id="toSchedulerButton" (click)='showScheduler()' class="btn-primary nav-but">Agendar Calendario</button>
+      </div>
+      <div class="col-6">
+        <button (click)="showCalendar()" id="toCalendarButton" class="btn-primary nav-but">Ver Calendario</button>
+      </div>
+    </div>
+
+    <div class="row" [hidden]="schedulerVis">
+      
+      <div class="col-6" id="calendar-column">
+        <ejs-schedule #scheduleObj [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="setView"></ejs-schedule>
+      </div>
+
+      
+
+      <div class="col-6" id="input-column">
+
+        <form>
+
+        <div class="row inputs">
+
+          <div class="col-6">
+
+            <label class="form-check-label" for="hija-selector">Encargada:</label>
+
+            <select class="form-control" name="hija-selector" id="hija-selector"  [(ngModel)]="hija_input" required>
+              <option value="Lulu">Lulu</option>
+              <option value="Mine">Mine</option>
+              <option value="Lety">Lety</option>
+              <option value="Sandra">Sandra</option>
+              <option value="Anita">Anita</option>
+            </select>
+
+          </div>
+
+          <div class="col-6">
+
+            <label class="form-check-label" for="motivo-input">Motivo:</label>
+            <input type="text" class="form-control" name="motivo-input" id="motivo-input" [(ngModel)]="motivo_input">
+
+          </div>
+
+        </div>
+
+        <div class="row inputs">
+
+          <div class="col-6">
+
+            <label class="form-check-label" for="from-time-selector">Desde:</label>
+            <input class="form-control" type="time" name="from-time-selector" id="from-time-selector" [(ngModel)]="from_input" required>
+
+          </div>
+
+          <div class="col-6">
+
+            <label class="form-check-label" for="to-time-selector">Hasta:</label>
+            <input class="form-control" type="time" name="to-time-selector" id="to-time-selector" [(ngModel)]="to_input" required>
+
+          </div>
+
+        </div>
+
+
+        <div class="row inputs">
+
+          <div class="col">
+
+            <input type="checkbox" id="weekly-box" name="weekly-box" [(ngModel)]="is_week_checked" (change)="fill_week()"/>
+            <label class="checkbox-label" for="weekly-box">Fill week</label>
+
+            <input type="checkbox" id="monthly-box" name="weekly-box" [(ngModel)]="is_month_checked" (change)="fill_month()"/>
+            <label class="checkbox-label" for="monthly-box">Fill month</label>
+
+          </div>
+
+
+        </div>
+
+        
+        <div id="submit-btn">
+          <button class="btn btn-primary" type="submit" (click)="submit_schedule()">Submit month</button>
+        </div>
+
+        
+        
+      </form>
+      </div>
+
+    </div>
+
+    <div class="row" id="calendarVis" [hidden]="calendarVis">
+      <div class="col" id="calendar-column-see">
+        <ejs-schedule #calendarObj [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="setView" width="70%"></ejs-schedule>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>

@@ -1,0 +1,76 @@
+body{
+    background-color: #ced1d6;
+    min-height: 100vh;
+}
+
+body > .container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header{
+    background-color: #2253a0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 110px; 
+}
+
+h1{
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+label{
+    font-weight: bold;
+}
+
+#submit-btn{
+    text-align: center;
+}
+
+#input-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#calendar-column, #input-column{
+    padding: 5px, 0px, 5px, 0px;
+}
+
+.inputs{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.checkbox-label{
+    margin-right: 50px;
+}
+
+.nav-but {
+    width: 100%;
+    background-color: #6B819F;
+    color: white;
+    font-weight: bold;
+    border: solid #6B819F;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#toSchedulerButton {
+    border-radius: 20px 10px 20px 10px;
+}
+
+#toCalendarButton {
+    border-radius: 10px 20px 10px 20px;
+}
+
+#calendar-column-see {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
